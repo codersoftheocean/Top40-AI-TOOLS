@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TOP 40 AI TOOLS — Field Guide</title>
+<meta name="description" content="40 practical AI tools with descriptions, how-to-use steps, cautions, and official links.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap');
+:root{--bg:#f1efe9;--paper:#fbfaf7;--ink:#111;--muted:#6e6b65;--line:#d6d1c8;--blue:#315cff;--green:#108365;--orange:#e86438}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Manrope,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+.container{width:min(1200px,calc(100% - 36px));margin:auto}
+a{color:inherit}
+.top{height:72px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.logo{width:28px;height:28px;background:#111;color:#fff;display:grid;place-items:center;font:500 10px "DM Mono"}
+.nav{display:flex;gap:22px;font:500 10px "DM Mono";text-transform:uppercase;color:var(--muted)}
+.nav a{text-decoration:none}
+.nav a:hover{color:var(--ink)}
+.hero{padding:80px 0 70px;border-bottom:1px solid var(--line)}
+.kicker{display:flex;gap:9px;align-items:center;color:var(--blue);font:500 10px "DM Mono";letter-spacing:.12em;text-transform:uppercase;margin-bottom:22px}
+.kicker i{width:28px;height:1px;background:var(--blue)}
+.hero-grid{display:grid;grid-template-columns:1.4fr .6fr;gap:80px;align-items:end}
+h1{font-size:clamp(56px,8.2vw,108px);line-height:.86;letter-spacing:-.075em;margin:0;font-weight:800}
+h1 em{display:block;color:var(--blue);font-style:normal}
+.hero-copy{padding-bottom:4px}
+.hero-copy p{font-size:15px;line-height:1.85;color:var(--muted);margin:0 0 25px}
+.repo-actions{display:flex;gap:8px;flex-wrap:wrap}
+.repo-btn{display:inline-flex;align-items:center;gap:8px;border:1px solid #bbb6ad;background:var(--paper);padding:10px 13px;text-decoration:none;font-size:11px;font-weight:800}
+.repo-btn.primary{background:#111;color:#fff;border-color:#111}
+.repo-btn:hover{transform:translateY(-1px)}
+.repo-meta{font:500 9px "DM Mono";color:var(--muted);margin-top:12px}
+.note{border-bottom:1px solid var(--line);display:grid;grid-template-columns:180px 1fr 170px}
+.note>div{padding:22px 0}
+.note .center{border-left:1px solid var(--line);border-right:1px solid var(--line);padding:22px 26px;font-size:13px;line-height:1.8}
+.note .label,.note .stats{font:500 9px "DM Mono";text-transform:uppercase;color:var(--muted);line-height:1.7}
+.note .stats{padding-left:20px}
+.section-head{padding:70px 0 23px;border-bottom:1px solid var(--ink);display:flex;align-items:end;justify-content:space-between}
+.section-head h2{margin:0;font-size:34px;letter-spacing:-.05em}
+.section-head span{font:500 9px "DM Mono";color:var(--muted);text-transform:uppercase}
+.category-title{padding:28px 0 15px;display:flex;align-items:center;gap:12px;font:500 10px "DM Mono";text-transform:uppercase;letter-spacing:.1em}
+.category-title .dot{width:7px;height:7px;background:var(--blue)}
+.category-title .rule{height:1px;background:var(--line);flex:1}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);border-left:1px solid #151515;border-top:1px solid #151515}
+.card{background:var(--paper);border-right:1px solid #151515;border-bottom:1px solid #151515;padding:20px;min-height:360px;display:flex;flex-direction:column}
+.card-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:25px}
+.num{font:500 9px "DM Mono";color:var(--muted)}
+.level{font:500 9px "DM Mono";padding:5px 7px;border:1px solid var(--line);text-transform:uppercase}
+.level.beginner{border-color:var(--green);color:var(--green)}
+.level.intermediate{border-color:var(--blue);color:var(--blue)}
+.level.pro{border-color:var(--orange);color:var(--orange)}
+.card h3{font-size:22px;letter-spacing:-.045em;margin:0 0 10px}
+.about{margin:0;color:var(--muted);font-size:12.5px;line-height:1.75}
+.how{margin-top:20px;padding-top:15px;border-top:1px solid var(--line)}
+.how-title{font:500 9px "DM Mono";text-transform:uppercase;letter-spacing:.08em;margin-bottom:9px}
+.how ol{margin:0;padding-left:18px;color:#4f4b45;font-size:11.5px;line-height:1.7}
+.how li{margin-bottom:4px}
+.caution{margin-top:14px;background:#f0eee8;padding:9px 10px;font-size:10px;line-height:1.55;color:#6a665f}
+.caution strong{color:#2e2c29}
+
+.interactive-tools{
+  display:flex;gap:8px;flex-wrap:wrap;margin-top:24px;
+  padding:12px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)
+}
+.tool-search{
+  flex:1 1 250px;border:1px solid var(--line);background:var(--paper);
+  padding:11px 13px;font:500 11px "DM Mono";outline:none;color:var(--ink)
+}
+.tool-search:focus{border-color:var(--blue)}
+.filter-btn{
+  border:1px solid var(--line);background:var(--paper);padding:10px 12px;
+  font:500 9px "DM Mono";text-transform:uppercase;cursor:pointer;color:var(--muted)
+}
+.filter-btn.active{background:#111;color:#fff;border-color:#111}
+.tool-count{font:500 9px "DM Mono";color:var(--muted);align-self:center;margin-left:auto}
+.card.hidden{display:none}
+.category.hidden{display:none}
+.how-toggle{
+  margin-top:12px;border:0;background:none;padding:0;color:var(--blue);
+  font:800 10px Manrope;cursor:pointer;text-transform:uppercase;letter-spacing:.04em
+}
+.how-content{display:none}
+.how-content.open{display:block}
+.card-bottom{margin-top:auto;padding-top:18px;display:flex;justify-content:space-between;align-items:center}
+.cat{font:500 9px "DM Mono";color:var(--muted);text-transform:uppercase}
+.visit{font-size:10px;font-weight:800;color:var(--blue);text-decoration:none;text-transform:uppercase}
+.visit:hover{text-decoration:underline}
+.rules{padding:70px 0 90px}
+.rules-grid{display:grid;grid-template-columns:repeat(3,1fr);border-left:1px solid var(--line);border-top:1px solid var(--line);margin-top:22px}
+.rule{padding:19px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);min-height:120px}
+.rule b{font-size:11px;display:block;margin-bottom:7px}
+.rule p{margin:0;color:var(--muted);font-size:11px;line-height:1.7}
+footer{border-top:1px solid #111;padding:22px 0 32px}
+.footer{display:flex;justify-content:space-between;gap:20px;font:500 9px "DM Mono";color:var(--muted);text-transform:uppercase}
+.footer strong{color:#111}
+@media(max-width:860px){.hero-grid{grid-template-columns:1fr;gap:34px}.grid{grid-template-columns:repeat(2,1fr)}.rules-grid{grid-template-columns:repeat(2,1fr)}.note{grid-template-columns:1fr}.note>div{padding:15px 0}.note .center{border-left:0;border-right:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 0}.note .stats{padding-left:0}.nav{display:none}}
+@media(max-width:560px){.container{width:min(100% - 26px,1200px)}.hero{padding:50px 0}h1{font-size:57px}.grid,.rules-grid{grid-template-columns:1fr}.section-head{flex-direction:column;align-items:start;gap:8px}.card{min-height:0}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="container" style="display:flex;align-items:center;justify-content:space-between;width:100%">
+    <a class="brand" href="#"><span class="logo">AI</span> TOP 40 AI TOOLS</a>
+    <nav class="nav">
+      <a href="#collection">Collection</a>
+      <a href="#rules">Ground rules</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+<div class="container">
+  <div class="kicker"><i></i> AI FIELD GUIDE / 2026 EDITION</div>
+  <div class="hero-grid">
+    <h1>Top 40<em>AI Tools.</em></h1>
+    <div class="hero-copy">
+      <p>A practical guide for students, creators and developers. Every tool includes what it does, how to start using it, what to watch for, and its official site.</p>
+      <div class="repo-actions">
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="container note">
+  <div class="label">WHY THIS EXISTS</div>
+  <div class="center"><strong>Use the tool for the task, not the hype.</strong> This collection is organized around real workflows: research, writing, design, coding, productivity and deployment. Read the usage steps, test the output, and keep your own judgement in the loop.</div>
+  <div class="stats">40 TOOLS<br>7 CATEGORIES<br>3 LEVELS<br>STATIC / GITHUB PAGES</div>
+</section>
+
+<section id="collection" class="container">
+<div class="section-head"><h2>The collection</h2><span>01 / 40 — FULL GUIDE</span></div>
+<div class="interactive-tools" aria-label="Tool filters">
+  <input id="toolSearch" class="tool-search" type="search" placeholder="Search tools, tasks or descriptions..." aria-label="Search AI tools">
+  <button class="filter-btn active" type="button" data-filter="all">All</button>
+  <button class="filter-btn" type="button" data-filter="Beginner">Beginner</button>
+  <button class="filter-btn" type="button" data-filter="Intermediate">Intermediate</button>
+  <button class="filter-btn" type="button" data-filter="Pro">Pro</button>
+  <span id="toolCount" class="tool-count">40 tools</span>
+</div>
+
+<div id="app"></div>
+</section>
+
+<section id="rules" class="container rules">
+<div class="section-head"><h2>Ground rules</h2><span>USE AI / KEEP YOUR JUDGEMENT</span></div>
+<div class="rules-grid">
+<div class="rule"><b>01 / Verify</b><p>AI can be confidently wrong. Check facts, citations and generated code before relying on them.</p></div>
+<div class="rule"><b>02 / Disclose</b><p>Follow your college, workplace or client rules for AI-assisted work.</p></div>
+<div class="rule"><b>03 / Guard data</b><p>Never paste passwords, API keys or private datasets without understanding the service's data handling.</p></div>
+<div class="rule"><b>04 / Understand it</b><p>If you cannot explain the output, do not blindly ship it or defend it in an interview.</p></div>
+<div class="rule"><b>05 / Commit often</b><p>Use Git when AI edits code so changes remain reviewable and reversible.</p></div>
+<div class="rule"><b>06 / Check prices</b><p>Plans and features can change. Confirm current details on the official site.</p></div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="container footer">
+<span><strong>TOP 40 AI TOOLS</strong> / STATIC FIELD GUIDE</span>
+</div>
+</footer>
+
+<script>
+const TOOLS = [
+["ChatGPT","Research","B","https://chatgpt.com","OpenAI's all-round assistant for chat, explaining, drafting, coding and analysing files.",["Sign in and open a new chat.","Give context: 'I'm a 2nd-year CSE student, explain hashing simply.'","Ask follow-ups, then request a quiz to test yourself."],"Verify facts; disclose use where required."],
+["Google Gemini","Research","B","https://gemini.google.com","Google's assistant, strong with images, video and Google apps.",["Open Gemini with your Google account.","Upload a slide, photo or PDF.","Ask it to explain, summarise or make revision notes."],"Cross-check key answers."],
+["Claude","Research","B","https://claude.ai","Anthropic's assistant, good at long documents, careful writing and code review.",["Start a chat and attach a report or code file.","Ask for a review: 'List bugs and unclear parts.'","Iterate on its suggestions."],"Don't upload material you aren't allowed to share."],
+["Perplexity","Research","B","https://www.perplexity.ai","Answer engine that cites a source beside each claim.",["Type a research question.","Read the answer, then click the numbered sources.","Use follow-ups to narrow the topic."],"Open the real sources; summaries can miss nuance."],
+["Gemini Notebook (was NotebookLM)","Research","B","https://notebooklm.google","Renamed from NotebookLM in July 2026. Answers only from the sources you upload.",["Create a notebook.","Add PDFs, links or notes as sources.","Ask questions or generate a study guide or audio overview."],"Quality depends on your sources."],
+["Grammarly","Writing","B","https://www.grammarly.com","Live grammar, tone and clarity checking.",["Install the browser extension or app.","Write your email or resume as usual.","Accept only suggestions that keep your meaning."],"Keep your own voice."],
+["Notion AI","Writing","B","https://www.notion.com/product/ai","AI inside Notion pages and databases.",["Open a page and invoke the AI assistant.","Ask it to summarise notes or draft a plan.","Turn results into tasks or tables."],"Check privacy settings before adding confidential data."],
+["QuillBot","Writing","B","https://quillbot.com","Paraphraser, summariser and grammar checker.",["Paste your draft.","Choose a mode such as Fluency or Formal.","Compare with the original and edit."],"Rewording isn't original thinking. Cite sources."],
+["DeepL Write","Writing","B","https://www.deepl.com/write","Rewriting tool that sharpens tone and style.",["Paste your text.","Pick a tone: business, academic, casual.","Review the changes line by line."],"Confirm it still says what you meant."],
+["Jenni AI","Writing","I","https://jenni.ai","Academic writing helper with outlining and citations.",["Create a document and set your topic.","Outline sections first.","Draft with suggestions and verify each citation."],"Follow institutional AI policy."],
+["Canva Magic Studio","Design","B","https://www.canva.com/magic","Design suite with AI for slides, images and video.",["Open Canva and pick a template or Magic Design.","Describe your project in a sentence.","Edit text and swap visuals."],"Check facts and image licences."],
+["Gamma","Design","B","https://gamma.app","Generates decks, docs and web pages from a prompt.",["Choose 'Generate' and enter your topic.","Edit the outline it proposes.","Fix technical errors and export."],"Always correct technical content by hand."],
+["Beautiful.ai","Design","B","https://www.beautiful.ai","Slide tool that auto-formats as you add content.",["Pick a smart-slide template.","Add your text and data.","Let it handle spacing and alignment."],"Design can't fix weak content."],
+["Adobe Express","Design","B","https://www.adobe.com/express","Easy editor for graphics, short video and social posts.",["Choose a template.","Customise text and images, use AI generation.","Export or schedule."],"Verify rights on imported assets."],
+["SlidesAI","Design","B","https://www.slidesai.io","Turns text into presentation slides.",["Add the extension for Slides or PowerPoint.","Paste your notes.","Generate, then rewrite each slide."],"Fact-check every slide."],
+["Adobe Firefly","Design","I","https://firefly.adobe.com","Generative images, video and effects.",["Write a detailed prompt with style and lighting.","Pick a result and refine it.","Edit further in other Adobe apps."],"Review output for accuracy and rights."],
+["GitHub Copilot","Coding","B","https://github.com/features/copilot","Code completion, chat and agent help in your editor.",["Install the extension in VS Code.","Write a comment describing the function.","Accept, edit or reject suggestions; ask chat to explain."],"Review for bugs, security and licences."],
+["Cursor","Coding","I","https://cursor.com","AI-first editor that understands your whole repo.",["Open your project folder.","Use chat to ask about the codebase.","Apply multi-file edits and review the diff."],"Commit first; read every big change."],
+["Replit","Coding","B","https://replit.com","Browser IDE with an AI agent that builds and hosts apps.",["Create a new Repl or describe an app.","Let the agent scaffold it.","Run it and share the live link."],"Understand the architecture before scaling."],
+["Bolt.new","Coding","I","https://bolt.new","Prompt-to-app builder running full-stack in the browser.",["Describe your app.","Watch files generate and preview.","Iterate with follow-up prompts, then deploy."],"Inspect dependencies, auth and data handling."],
+["Lovable","Coding","I","https://lovable.dev","Builds web apps from plain-language requirements.",["Describe users and features.","Review the live preview.","Connect GitHub and a database as needed."],"Treat output as a prototype until audited."],
+["Blackbox AI","Coding","B","https://www.blackbox.ai","Coding assistant for snippets, search and extensions.",["Ask a coding question or paste an error.","Copy the snippet into a test file.","Run it before using it."],"Test all code; don't copy blindly."],
+["v0 by Vercel","Coding","I","https://v0.app","Generates React/Next.js UI from text or screenshots.",["Describe a component or upload a screenshot.","Refine by chatting.","Copy code or deploy to Vercel."],"Check accessibility and responsiveness."],
+["Windsurf","Coding","P","https://windsurf.com","AI coding editor whose agent plans and edits across files.",["Open a repo in Windsurf.","Give the agent a task with clear goals.","Run tests and review before committing."],"Keep Git history so edits can be reverted."],
+["Antigravity","Coding","P","https://antigravity.google","Google's agent-first coding environment.",["Open a project and assign an agent a task.","Watch its plan and actions.","Review code, tests and dependencies."],"Audit architecture and security."],
+["Fireflies.ai","Productivity","B","https://fireflies.ai","Records, transcribes and summarises meetings.",["Connect your calendar.","Invite the notetaker to a call.","Read the summary and action items."],"Get everyone's consent before recording."],
+["Descript","Productivity","I","https://www.descript.com","Edit audio and video by editing the transcript.",["Import a recording.","Delete words in the transcript to cut the video.","Export your demo."],"Check transcript accuracy and media rights."],
+["CapCut","Productivity","B","https://www.capcut.com","Video editor with AI captions and effects.",["Import clips.","Auto-generate captions.","Trim, add music, export."],"Review captions; avoid unlicensed music."],
+["ElevenLabs","Productivity","I","https://elevenlabs.io","Realistic AI voices and text-to-speech.",["Paste your script.","Pick a voice and adjust settings.","Download audio or use the API."],"Never clone voices without permission."],
+["Zapier","Productivity","I","https://zapier.com","Connects apps and automates workflows.",["Choose a trigger, e.g. new form response.","Add actions, e.g. add row and send message.","Test, then turn on."],"Review app permissions and failure cases."],
+["Motion","Productivity","B","https://www.usemotion.com","AI planner that auto-schedules tasks.",["Add tasks with deadlines.","Connect your calendar.","Let it build a schedule, then adjust."],"Treat plans as suggestions."],
+["HeyGen","Productivity","B","https://www.heygen.com","Creates avatar presenter videos and translations.",["Pick an avatar and paste a script.","Choose a voice.","Generate and preview."],"Get consent for likeness; disclose AI avatars."],
+["Suno","Productivity","B","https://suno.com","Generates songs from text prompts.",["Describe genre, mood and lyrics.","Generate versions.","Download your pick."],"Read licence terms before commercial use."],
+["DeepSeek","Productivity","I","https://www.deepseek.com","Reasoning and coding assistant with open-weight models.",["Open chat and pick a reasoning mode.","Paste a problem or code.","Check its step-by-step logic."],"Verify answers; avoid confidential data."],
+["Kimi","Productivity","I","https://www.kimi.com","Long-context assistant for documents and research.",["Upload a long paper or report.","Ask for a summary of each section.","Compare documents and check against sources."],"Verify conclusions in the source."],
+["Vercel","Deploy","I","https://vercel.com","Hosting for Next.js and frontend apps.",["Push your project to GitHub.","Import the repo in Vercel.","Add environment variables and deploy."],"Protect env variables."],
+["Netlify","Deploy","B","https://www.netlify.com","Simple hosting for static and frontend sites.",["Drag a folder in, or connect a repo.","Set build command if needed.","Get a live URL."],"Check redirects, forms and access."],
+["Railway","Deploy","P","https://railway.com","Deploys apps, APIs and databases with little config.",["Create a project from a GitHub repo.","Add a database service.","Set variables and deploy."],"Monitor usage, secrets and costs."],
+["Render","Deploy","I","https://render.com","Cloud host for web services, APIs and databases.",["Create a new Web Service from your repo.","Set build and start commands.","Add secrets and health checks."],"Configure logs and production settings."],
+["GitHub Pages","Deploy","B","https://pages.github.com","Free static hosting from a GitHub repo.",["Put index.html in a repo.","Open Settings → Pages.","Choose the main branch and save."],"Static only; backends need another service."]
+];
+
+const CATS = ["Research","Writing","Design","Coding","Productivity","Deploy"];
+const LEVELS = {B:"Beginner",I:"Intermediate",P:"Pro"};
+const app = document.getElementById("app");
+const esc = v => String(v).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+
+CATS.forEach(cat => {
+  const list = TOOLS.filter(t => t[1] === cat);
+  if (!list.length) return;
+
+  const section = document.createElement("section");
+  section.className = "category";
+  section.innerHTML = `
+    <div class="category-title">
+      <span class="dot"></span>
+      <span>${esc(cat)}</span>
+      <span class="rule"></span>
+      <span>${String(list.length).padStart(2,"0")}</span>
+    </div>
+    <div class="grid">
+      ${list.map(t => {
+        const level = LEVELS[t[2]];
+        return `
+          <article class="card"
+            data-name="${esc(t[0])}"
+            data-level="${esc(level)}"
+            data-search="${esc((t[0]+" "+t[1]+" "+t[4]+" "+t[6]).toLowerCase())}">
+            <div class="card-top">
+              <span class="num">${String(TOOLS.indexOf(t)+1).padStart(2,"0")}</span>
+              <span class="level ${level.toLowerCase()}">${level}</span>
+            </div>
+
+            <h3>${esc(t[0])}</h3>
+            <p class="about">${esc(t[4])}</p>
+
+            <button class="how-toggle" type="button" aria-expanded="false">
+              How to use +
+            </button>
+
+            <div class="how-content">
+              <div class="how">
+                <div class="how-title">How to use</div>
+                <ol>${t[5].map(s => `<li>${esc(s)}</li>`).join("")}</ol>
+              </div>
+            </div>
+
+            <div class="caution">
+              <strong>Watch out:</strong> ${esc(t[6])}
+            </div>
+
+            <div class="card-bottom">
+              <span class="cat">${esc(t[1])}</span>
+              <a class="visit" href="${esc(t[3])}" target="_blank" rel="noopener noreferrer">
+                Official site ↗
+              </a>
+            </div>
+          </article>`;
+      }).join("")}
+    </div>`;
+  app.appendChild(section);
+});
+
+const search = document.getElementById("toolSearch");
+const count = document.getElementById("toolCount");
+const filterButtons = document.querySelectorAll(".filter-btn");
+let activeFilter = "all";
+
+function applyFilters(){
+  const query = search.value.trim().toLowerCase();
+  let visible = 0;
+
+  document.querySelectorAll(".category").forEach(category => {
+    let categoryVisible = 0;
+
+    category.querySelectorAll(".card").forEach(card => {
+      const matchesText = !query || card.dataset.search.includes(query);
+      const matchesLevel = activeFilter === "all" || card.dataset.level === activeFilter;
+      const show = matchesText && matchesLevel;
+
+      card.classList.toggle("hidden", !show);
+      if (show) {
+        visible++;
+        categoryVisible++;
+      }
+    });
+
+    category.classList.toggle("hidden", categoryVisible === 0);
+  });
+
+  count.textContent = visible + (visible === 1 ? " tool" : " tools");
+}
+
+search.addEventListener("input", applyFilters);
+
+filterButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    activeFilter = button.dataset.filter;
+    filterButtons.forEach(b => b.classList.toggle("active", b === button));
+    applyFilters();
+  });
+});
+
+document.addEventListener("click", event => {
+  const button = event.target.closest(".how-toggle");
+  if (!button) return;
+
+  const content = button.nextElementSibling;
+  const open = content.classList.toggle("open");
+  button.setAttribute("aria-expanded", String(open));
+  button.textContent = open ? "Hide how to use −" : "How to use +";
+});
+
+applyFilters();
+</script>
+</body>
+</html>
